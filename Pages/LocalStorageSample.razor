@@ -1,0 +1,24 @@
+@page "/localstoragesample"
+@inject ILocalStorageService localStorageService
+
+<PageTitle>LocalStorageSample</PageTitle>
+
+<h1>LocalStorageSample</h1>
+
+<input type="text" @bind="text" />
+
+<button class="btn btn-primary" @onclick="SaveText">保存</button>
+
+@code {
+    private string? text;
+
+    protected override async Task OnInitializedAsync()
+    {
+        text = await localStorageService.GetItemAsync<String>("text");
+    }
+
+    private async Task SaveText()
+    {
+        await localStorageService.SetItemAsync("text", text);
+    }
+}

@@ -1,5 +1,7 @@
 # dotnet_blazor_webassembly_example1
 
+[デモ](https://tobotobo.github.io/dotnet_blazor_webassembly_example1/)
+
 [ASP.NET Core Blazor プログレッシブ Web アプリケーション (PWA)](https://learn.microsoft.com/ja-jp/aspnet/core/blazor/progressive-web-app?view=aspnetcore-8.0&tabs=visual-studio-code)
 
 [Blazor WebAssembly アプリの GitHub Pages への発行を、より楽にする](https://qiita.com/jsakamoto/items/0be0005d9b30acbfe1e4)
@@ -12,6 +14,12 @@
 index.html の `<script src="_framework/blazor.webassembly.js"></script>` の前に `<script>var Module;</script>` を入れる
 
 [PatrickJahr.Blazor](https://github.com/patrickjahr/PatrickJahr.Blazor)
+
+[Blazored.LocalStorage](https://www.nuget.org/packages/Blazored.LocalStorage)
+
+```
+dotnet add package Blazored.LocalStorage --version 4.5.0
+```
 
 ```
 dotnet new blazorwasm --pwa
