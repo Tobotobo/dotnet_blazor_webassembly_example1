@@ -29,7 +29,7 @@ jobs:
       - name: Publish .NET Core Project
         run: dotnet publish -o dist/Web --nologo
 
-      # changes the base-tag in index.html from '/' to 'PatrickJahr.Blazor' to match GitHub Pages repository subdirectory
+      # changes the base-tag in index.html from '/' to 'dotnet_blazor_webassembly_example1' to match GitHub Pages repository subdirectory
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
         with:
