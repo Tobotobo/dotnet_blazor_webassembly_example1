@@ -11,6 +11,7 @@
 [Blazor wasmがiOSで動かない時の解決方法](https://qiita.com/Lemon73/items/9ef83c579f8d6eaa55b3)
 index.html の `<script src="_framework/blazor.webassembly.js"></script>` の前に `<script>var Module;</script>` を入れる
 
+[PatrickJahr.Blazor](https://github.com/patrickjahr/PatrickJahr.Blazor)
 
 ```
 dotnet new blazorwasm --pwa
@@ -21,3 +22,9 @@ dotnet add package PublishSPAforGitHubPages.Build --version 2.2.0
 dotnet publish -c:Release -p:GHPages=true -p:GHPagesBase=/
 ```
 `bin/Release/net8.0/publish/wwwroot`
+
+
+PatrickJahr.Blazor.PwaUpdate
+```
+dotnet add package PatrickJahr.Blazor.PwaUpdate
+```
