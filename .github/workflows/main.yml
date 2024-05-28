@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -44,9 +44,15 @@ jobs:
       - name: Add .nojekyll file
         run: touch dist/Web/wwwroot/.nojekyll
 
-      - name: Commit wwwroot to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+      # GitHub Pagesに公開
+      # デフォルトではgh-pageeブランチにpushする
+      - name: Push gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist/Web/wwwroot
+          # Deploy keysやPersonal access Tokensも使用可能
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/Web/wwwroot
+          # keep_filesをtrueにすると、git pushの度に一旦全てのファイルが削除される挙動を抑制できる
+          # keep_files: true
+          user_name: github-actions
+          user_email: github-actions@github.com
